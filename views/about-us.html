@@ -1,0 +1,1976 @@
+
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        AjaxContainer: 'div.dmBody',
+        WrappingContainer: 'div.dmOuter',
+        HomeUrl: 'https://www.northernpanelworks.com.au/',
+        AccountUUID: '79c82674b04d4f3bade873fc08d02134',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '20bbae45',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Sun May 01 22:49:45 UTC 2022',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'about-us',
+        InitialPageUuid: '3e0e5d8630d8431fbb22d9caf8b88817',
+        InitialPageId: '1030165655',
+        InitialEncodedPageAlias: 'YWJvdXQtdXM=',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '5765',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        NotificationSubDomain: 'northernpanelworks',
+        HasCustomDomain: true,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 5,
+            NavbarLiveHomePage: 'https://www.northernpanelworks.com.au/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+<meta charset="utf-8">
+
+<link rel="canonical" href="https://www.northernpanelworks.com.au/about-us">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon" href="https://irp-cdn.multiscreensite.com/20bbae45/dms3rep/multi/home-screen.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp-cdn.multiscreensite.com/20bbae45/site_favicon_16_1614068479902.ico"/>
+
+<!-- End favorite icons -->
+
+<link rel="preconnect" href="https://lirp.cdn-website.com/" crossorigin />
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if(!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function() {
+            },
+            getCurrentDeviceType: function() {
+                return window._currentDevice;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+<!-- loadCSS function -->
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    cssLinks = null;
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if(link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      }  
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def(){this.promise=new Promise((function(a,b){this.resolve=a,this.reject=b}).bind(this))}
+    const defs={};
+    window.getDeferred=function(a){return null==defs[a]&&(defs[a]=new Def),defs[a]}
+    window.waitForDeferred = function (b, a, c) {
+      let d = window?.getDeferred?.(b);
+      d
+        ? d.promise.then(a)
+        : c && ["complete", "interactive"].includes(document.readyState)
+        ? setTimeout(a, 1)
+        : c
+        ? document.addEventListener("DOMContentLoaded", a)
+        : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function -->
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    cssLinks = null;
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if(link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      }  
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300..800&amp;subset=latin-ext&amp;display=swap"  />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-new-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/3913/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-new.min.css" />
+
+<!-- End of RT CSS Include -->
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/production_3913/3241b04cae54f4d1d13d95ada1f4d404.css" id="widgetCSS" />
+
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="about-us"] #dm [data-show-on-page-only="about-us"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/20bbae45/files/20bbae45_1.min.css?v=53" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+    .widget-1f5975 .copyright {
+    font-size: 13px;
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+}
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody nav.u_1105056461
+{
+	color:black !important;
+}
+*#dm *.dmBody nav.u_1861254462
+{
+	color:white !important;
+}
+*#dm *.dmBody div.u_1067573530
+{
+	line-height:26px !important;
+}
+*#dm *.dmBody div.u_1230928702
+{
+	line-height:26px !important;
+}
+*#dm *.dmBody *.u_1391839984 .photoGalleryThumbs .image-container a
+{
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1391839984
+{
+	border-color:rgba(197,197,197,1) !important;
+	border-width:1px !important;
+	border-style:solid !important;
+}
+*#dm *.dmBody div.u_1891392155
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1166944071:hover
+{
+	background-color:rgba(186,118,81,1) !important;
+	background-image:none !important;
+	border-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody a.u_1166944071.hover
+{
+	background-color:rgba(186,118,81,1) !important;
+	background-image:none !important;
+	border-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody a.u_1166944071
+{
+	border-style:solid !important;
+	border-width:0 !important;
+	border-radius:0 !important;
+	-moz-border-radius:0 !important;
+	-webkit-border-radius:0 !important;
+	background-color:rgba(0,134,195,1) !important;
+}
+*#dm *.dmBody a.u_1166944071 span.text
+{
+	font-family:Teko !important;
+	color:rgba(255,255,255,1) !important;
+	font-weight:normal !important;
+}
+*#dm *.dmBody *.u_1660694330 .photoGalleryThumbs .image-container a
+{
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1660694330
+{
+	border-color:rgba(197,197,197,1) !important;
+	border-width:1px !important;
+	border-style:solid !important;
+}
+*#dm *.dmBody div.u_1856777772
+{
+	line-height:26px !important;
+}
+*#dm *.dmBody div.u_1095216974
+{
+	line-height:26px !important;
+}
+*#dm *.dmBody div.u_1446646961
+{
+	line-height:26px !important;
+}
+*#dm *.dmBody div.u_1137871509
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/20bbae45/dms3rep/multi/opt/594-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1615631366 hr
+{
+	border-top-width:1px !important;
+	border-top-style:solid !important;
+	color:rgba(160,160,160,1) !important;
+}
+*#dm *.dmBody div.u_1281311936 hr
+{
+	border-top-width:1px !important;
+	border-top-style:solid !important;
+	color:rgba(160,160,160,1) !important;
+}
+*#dm *.dmBody div.u_1634600330 span
+{
+	text-transform:capitalize !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_1406765448
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:8px !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1137871509
+{
+	height:275px !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1067573530
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	display:block !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:8px !important;
+}
+*#dm *.dmBody *.u_1391839984 .photoGalleryThumbs .image-container a
+{
+	padding-top:730px !important;
+}
+*#dm *.dmBody div.u_1391839984
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1230928702
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	display:block !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1065777153
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+	margin-left:0 !important;
+	margin-top:100px !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1156078674
+{
+	margin-left:0 !important;
+	padding-top:30px !important;
+	padding-left:20px !important;
+	padding-bottom:100px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:20px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1891392155
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:20px !important;
+	padding-left:20px !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	width:auto !important;
+}
+*#dm *.dmBody a.u_1166944071 span.text
+{
+	font-size:20px !important;
+}
+*#dm *.dmBody div.u_1171839505
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody div.u_1510496559
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:15.8438px !important;
+	margin-left:0 !important;
+	max-width:935px !important;
+	margin-top:10px !important;
+	margin-bottom:8px !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1166944071
+{
+	width:120px !important;
+	height:59px !important;
+}
+*#dm *.dmBody div.u_1695266003
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody *.u_1660694330 .photoGalleryThumbs .image-container a
+{
+	padding-top:500px !important;
+}
+*#dm *.dmBody div.u_1736190046
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody div.u_1660694330
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:582px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1903460098
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1856777772
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	display:block !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1289771510
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1095216974
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	display:block !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1296239915
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody div.u_1052756168
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:14px !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1025560764
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:8px !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1836995325
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody div.u_1281311936
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:8px !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1446646961
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1679767189
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:20px !important;
+	margin-bottom:8px !important;
+}
+*#dm *.dmBody div.u_1956810195
+{
+	padding-top:0px !important;
+	padding-bottom:0px !important;
+	padding-right:0px !important;
+	padding-left:0px !important;
+}
+*#dm *.dmBody div.u_1615631366
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:23px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1634600330
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-45, .size-45, .size-45 > font { font-size: 45px !important; }.font-size-45, .size-45, .size-45 > font { font-size: 45px !important; }.font-size-19, .size-19, .size-19 > font { font-size: 19px !important; }.font-size-19, .size-19, .size-19 > font { font-size: 19px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Noto Sans Fallback";
+  src: local('Arial');
+  ascent-override: 100.1833%;
+  descent-override: 27.459%;
+  size-adjust: 106.7044%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Open Sans Fallback";
+  src: local('Arial');
+  ascent-override: 101.1768%;
+  descent-override: 27.7323%;
+  size-adjust: 105.6416%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+
+  <title>
+    About Us | Northern Panel Works Pty Ltd
+  </title>
+  <meta name="description" content="Meet our highly-skilled &amp; trained team at Northern Panel Works here. Our Pinelands workshop caters to all vehicle makes &amp; models. Call us for a free quote."/>
+
+  <!-- Google Tag Manager -->  <script>
+
+
+
+
+
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KJK3224');
+
+  
+
+  
+
+  </script>
+  <!-- End Google Tag Manager -->  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script>
+
+
+
+
+
+
+
+(function(t,r,i,p){i=t.createElement(r);i.src="https://webcomponents.localsearch.com.au/widgets/certificateOfTrust?embed=true&id=8375692&location=robina,qld&target=certificateOfTrust";i.async=true;p=t.getElementsByTagName(r)[0];p.parentNode.insertBefore(i,p)})(document,"script");
+  
+
+  
+
+  
+
+  
+
+  </script>
+  <style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Header HTML Css for Gallery as FlipBox */
+.flipBoxGallery .flipTitle {
+    opacity: 1 !important;
+    transition: all 0.3s ease !important;
+}
+.dmMobileBody .flipIcon {
+    opacity: 0 !important;
+}
+.dmMobileBody .flipTitle {
+    opacity: 0 !important;
+}
+.flipIcon {
+    top: 40% !important;
+    transition: all 0.3s ease !important;
+}
+.flipBoxGallery .photoGalleryThumbs:hover .flipTitle{
+    opacity: 0 !important;
+}
+.flipBoxGallery .photoGalleryThumbs:hover .flipIcon{
+    opacity: 0 !important;
+}
+.flipBoxGallery .caption-inner {
+    height: 100% !important;
+}
+/* hide flipTitle to tablet */
+body.dmTabletBody .flipTitle{
+    opacity: 0 !important;
+}
+    
+    .dmLargeBody #dm .dmRespRow .dmRespCol.large-11 .dmform-wrapper .dmformsubmit, .dmLargeBody #dm .dmRespRow .dmRespCol.large-12 .dmform-wrapper .dmformsubmit{
+    min-width: 50px !important;
+}
+    
+    
+    #dm .dmBackToTop{
+        display: none !important;
+    }
+    
+    .dmform .fileUploadLink:hover{
+        background-color: #E5E5E5;
+    }
+    .dmform .fileUploadLink{
+    padding: 2px 5px 2px 5px !important;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4F4F4F;
+    background-color: #EFEFEF;
+    border-radius: 3px !important;
+    font-family: Arial !important;
+    font-size: 16px !important;
+    color: #333333 !important;
+    }
+    
+    div.dmInner .filewrapper{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c5c5c5;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #ffffff;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </style>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="About Us | Northern Panel Works Pty Ltd"/>
+  <meta name="twitter:description" content="Meet our highly-skilled &amp; trained team at Northern Panel Works here. Our Pinelands workshop caters to all vehicle makes &amp; models. Call us for a free quote."/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/20bbae45/dms3rep/multi/opt/social-1920w.png"/>
+  <meta property="og:description" content="Meet our highly-skilled &amp; trained team at Northern Panel Works here. Our Pinelands workshop caters to all vehicle makes &amp; models. Call us for a free quote."/>
+  <meta property="og:title" content="About Us | Northern Panel Works Pty Ltd"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/20bbae45/dms3rep/multi/opt/social-1920w.png"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="about-us"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody " style="padding:0;margin:0;"
+      
+      >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1667483935"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-sec rows-1200 hasStickyHeader layout-drawer_push-content dmPageBody d-page-1397122974 dmFreeHeader" id="dm-outer-wrapper" data-page-class="1397122974" data-buttonstyle="ROUND_SIDES"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" layout="78f5c343822e4eb3aac27f4ad5d13812===header" has-shadow="true"> <div class="dmHeaderResp dmHeaderStack " id="1548455902"> <div class="u_1135377023 dmRespRow" style="text-align: center;" id="1135377023"> <div class="dmRespColsWrapper" id="1727222038"> <div class="u_1020421684 dmRespCol small-12 large-4 medium-4" id="1020421684"> <div class="u_1266805963 imageWidget align-center" data-widget-type="image" id="1266805963" data-element-type="image" data-binding="W3siYmluZGluZ05hbWUiOiJpbWFnZSIsInZhbHVlIjoic2l0ZV9pbWFnZXMubG9nbyJ9XQ=="> <a href="/" id="1093918309"><img src="https://lirp.cdn-website.com/20bbae45/dms3rep/multi/opt/npwlogo0-1920w.png" id="1591304685" class="" alt="Expert Smash Repair Specialists In Darwin" title="Expert Smash Repair Specialists In Darwin" data-diy-image="" data-dm-image-path="https://irp.cdn-website.com/20bbae45/dms3rep/multi/npwlogo0.png" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1209377251 dmRespCol small-12 large-8 medium-8" id="1209377251"> <div class="dmRespRow" id="1777832606"> <div class="dmRespColsWrapper" id="1007039040"> <div class="u_1108156903 dmRespCol small-12 large-7 medium-7" id="1108156903"> <div class="u_1087124624 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1087124624" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-24 m-size-17" style="line-height: 1;"><span class="m-font-size-17 font-size-24" style="color:rgb(54, 54, 54);display:initial;font-family:Teko, 'Teko Fallback';">&nbsp;</span><a href="http://maps.google.com/maps?q=Po+Box+1223+Palmerston+NT+0831" target="_blank" runtime_url="http://maps.google.com/maps?q=Po+Box+1223+Palmerston+NT+0831" class="m-font-size-17 font-size-24" style="color:rgb(54, 54, 54);display:initial;font-family:Teko, 'Teko Fallback';">Po Box 1223 Palmerston NT 0831</a></p></div> 
+</div> 
+ <div class="u_1937855233 dmRespCol small-12 large-3 medium-3" id="1937855233"> <div class="u_1280033911 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1280033911" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-17 size-24" style="line-height: 1;"><a href="mailto:n.p.w@bigpond.com" type="email" class="m-font-size-17 font-size-24" style="color:rgb(54, 54, 54);display:initial;font-family:Teko, 'Teko Fallback';">n.p.w@bigpond.com</a></p></div> 
+</div> 
+ <div class="u_1647298634 dmRespCol small-12 large-2 medium-2" id="1647298634"> <div class="u_1897425702 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1897425702" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-17 size-24" style="line-height: 1;"><a href="tel:0889329420" type="call" class="m-font-size-17 font-size-24" style="color:rgb(54, 54, 54);display:initial;font-family:Teko, 'Teko Fallback';" runtime_url="tel:0889329420">08 8932 9420</a></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1090815774" id="1090815774"> <div class="dmRespColsWrapper" id="1534807274"> <div class="u_1034480999 dmRespCol small-12 large-9 medium-9" id="1034480999"> <nav class="u_1861254462 effect-border main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_7" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1861254462" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about-us" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_010101699965  " target="" data-target-page-alias="" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+         About Us
+        " data-auto="page-text-style">About Us<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/services" class="unifiednav__item  dmUDNavigationItem_01010189528  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Services
+        " data-auto="page-text-style">Services<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/insurance-work" class="unifiednav__item  dmUDNavigationItem_010101397698  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Insurance Work
+        " data-auto="page-text-style">Insurance Work<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/spare-parts" class="unifiednav__item  dmUDNavigationItem_010101304512  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Spare Parts
+        " data-auto="page-text-style">Spare Parts<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101670853  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Gallery
+        " data-auto="page-text-style">Gallery<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101785880  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Contact
+        " data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1651700033 dmRespCol small-12 large-3 medium-3" id="1651700033"> <div data-element-type="html" class="u_1917650013 dmCustomHtml" id="1917650013"> <a href="https://www.localsearch.com.au/profile/northern-panel-works/pinelands-nt/ZIQ6" target="_blank"><img src="https://www.localsearch.com.au/resources/sites/images/social-media/colour-sq-localsearch.svg" style="float: left; width: 32px; height: 32px; margin: 0px 12px 0px 0px;" title="www.localsearch.com.au" alt="www.localsearch.com.au" name="" onerror="handleImageLoadError(this)"/></a> 
+ <a href="https://www.facebook.com/Northern-Panel-Works-107722541465828" target="_blank"><img src="https://www.localsearch.com.au/resources/sites/images/social-media/colour-sq-facebook.svg" style="float: left; width: 32px; height: 32px; margin: 0px 0px 0px 0px;" title="Find us on Facebook" alt="Find us on Facebook" name="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"> <div class="innerPageTitle">About Us</div> 
+</div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="1667483935" class="dmBody u_dmStyle_template_about-us"> <div id="allWrapper" class="allWrapper"> <div id="dm_content" class="dmContent"> <div dm:templateorder="1" class="dmDefaultRespTmpl" id="1397122974"> <div class="innerPageTmplBox dmDefaultPage  dmRespRowsWrapper" id="1382039147"> <div class="u_1137871509 dmRespRow" id="1137871509"> <div class="dmRespColsWrapper" id="1770181583"> <div class="dmRespCol large-12 medium-12 small-12" id="1633588465"> <div class="u_1634600330 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1634600330" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-45 text-align-center size-45" style="line-height: 1;"><span class="m-font-size-45 font-size-45" m-font-size-set="true" style="text-transform:uppercase;color:rgb(255, 255, 255);font-weight:400;display:initial;font-family:Teko, 'Teko Fallback';">About us</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1156078674" id="1156078674"> <div class="dmRespColsWrapper" id="1714677759"> <div class="dmRespCol large-12 medium-12 small-12 u_1521494159" id="1521494159"> <div class="u_1406765448 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1406765448"> <h1 class="text-align-center"><span style="display: initial;">Our Expert Smash Repair Team</span></h1> 
+</div> 
+ <div class="dmRespRow u_1065777153" id="1065777153"> <div class="dmRespColsWrapper" id="1969007711"> <div class="dmRespCol large-6 medium-6 small-12" id="1485863397"> <div class="u_1391839984 dmPhotoGallery newPhotoGallery dmPhotoGalleryResp" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="1" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1391839984" data-placeholder="false" data-rows-to-show="100" data-link-gallery="true"> <ul class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1411865462"> <li class="photoGalleryThumbs" id="1639773640"> <div class="image-container" id="1017525039"> <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/20bbae45/dms3rep/multi/643.jpg" id="1531441621"><img irh="" irw="" alt="Car Paint — Auto Services in Palmerston, NT" data-src="https://lirp.cdn-website.com/20bbae45/dms3rep/multi/opt/643-1920w.jpg" id="1933624280" class="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="caption-container" style="display:none" id="1772061091"> <span class="caption-inner" id="1120779135"> <a class="caption-button dmWidget clearfix" id="1042477506"> <span class="iconBg" id="1233803974"> <span class="icon hasFontIcon icon-star" id="1829215301"></span> 
+</span> 
+ <span class="text" id="1168443364">Button</span> 
+</a> 
+</span> 
+</div> 
+</li> 
+</ul> 
+ <div class="photoGalleryViewAll link" isall="true" data-viewall="View more" data-viewless="View less" style="display:none;" id="1875513200"></div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1973176656"> <div class="u_1067573530 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1067573530"><p><span style="display: initial;">At Northern Panel Works (NPW), all panel work and spray painting is performed on-site at our centrally located workshop - located just off the Stuart Highway in Pinelands. Our workshop offers plenty of off-street parking, amenities for people with disabilities, an air-conditioned office and multiple phones for processing fast claims.<br/><br/>With just over 350sqm of production space, we are capable of working on 20 cars per week on-site. However, we can increase this number to hundreds of cars, in the case of widespread hail storm damage. We have a network of trusted contractors to help cater for those big events.<br/><br/>At Northern Panel Works (NPW), our aim is to ensure each vehicle receives personalised attention to ensure it leaves our workshop meeting manufacturers' specifications while also looking factory-showroom finished.</span></p></div> 
+ <div class="u_1956810195 dmRespRow" id="1956810195" mode="2"> <div class="dmRespColsWrapper" id="1927905964"> <div class="u_1804280260 dmRespCol small-5 large-3 medium-3" id="1804280260"> <div class="u_1642165804 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1642165804"> <h2><span style="display: initial;">About NPW:</span></h2> 
+</div> 
+</div> 
+ <div class="u_1800377479 dmRespCol small-7 large-9 medium-9" id="1800377479"> <div class="u_1615631366 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1615631366"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1413875201"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1230928702 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1230928702"> <ul class="defaultList"><li><span style="display: initial;">Quality guaranteed, repairs at affordable prices</span></li><li><span style="display: initial;">All repairs carried out to manufacturers' specifications</span></li><li><span style="display: initial;">Friendly &amp; qualified team</span></li><li><span style="display: initial;">Free quotes &amp; claims assistance<span class="ql-cursor">﻿</span></span></li><li><span style="display: initial;">Highly skilled &amp; trained staff</span></li><li><span style="display: initial;">Loan car (subject to availability)</span></li><li><span style="display: initial;">5 staff working on floor with the capacity to handle 20 cars a week</span></li><li><span style="display: initial;">We work with trusted contractors (i.e we could handle up to 400 cars with hail damage)</span></li></ul> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1695266003" id="1695266003"> <div class="dmRespColsWrapper" id="1823622102"> <div class="dmRespCol large-12 medium-12 small-12" id="1189006605"> <div class="dmRespRow u_1891392155" id="1891392155"> <div class="dmRespColsWrapper" id="1560553568"> <div class="u_1171839505 dmRespCol small-12 large-10 medium-10" id="1171839505"> <div class="u_1510496559 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1510496559" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-19 m-size-19 m-text-align-center"><span class="font-size-19 m-font-size-19" style="color: rgb(255, 255, 255); display: initial; font-weight: bold;" m-font-size-set="true">FOR AN OBLIGATION-FREE QUOTE CONTACT OUR FRIENDLY TEAM AT NORTHERN PANEL WORKS TODAY.</span></p></div> 
+</div> 
+ <div class="u_1208852954 dmRespCol small-12 large-2 medium-2" id="1208852954"> <a data-display-type="block" class="u_1166944071 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/contact" data-element-type="dButtonLinkId" id="1166944071"> <span class="iconBg" id="1919807340"> <span class="icon hasFontIcon icon-star" id="1237072040"></span> 
+</span> 
+ <span class="text" id="1901159791">CONTACT</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1033924405" id="1033924405"> <div class="dmRespColsWrapper" id="1133590513"> <div class="dmRespCol large-12 medium-12 small-12" id="1491519849"> <div class="u_1736190046 dmRespRow" id="1736190046"> <div class="dmRespColsWrapper" id="1942234219"> <div class="dmRespCol large-6 medium-6 small-12" id="1350529680"> <div class="u_1660694330 dmPhotoGallery newPhotoGallery dmPhotoGalleryResp" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="1" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1660694330" data-placeholder="false" data-rows-to-show="100" data-link-gallery="true"> <ul class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1128436098"> <li class="photoGalleryThumbs" id="1782753640"> <div class="image-container" id="1555405107"> <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/20bbae45/dms3rep/multi/889.png" id="1405277199" class="u_1405277199"><img irh="" irw="" alt="Car Accident — Auto Services in Palmerston, NT" data-src="https://lirp.cdn-website.com/20bbae45/dms3rep/multi/opt/889-1920w.png" id="1076644304" class="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="caption-container" style="display:none" id="1337421985"> <span class="caption-inner" id="1221624997"> <a class="caption-button dmWidget clearfix" id="1358968815"> <span class="iconBg" id="1769397636"> <span class="icon hasFontIcon icon-star" id="1418054107"></span> 
+</span> 
+ <span class="text" id="1528357854">Button</span> 
+</a> 
+</span> 
+</div> 
+</li> 
+</ul> 
+ <div class="photoGalleryViewAll link" isall="true" data-viewall="View more" data-viewless="View less" style="display:none;" id="1198472990"></div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1815251883"> <div class="dmRespRow u_1836995325" id="1836995325" mode="2"> <div class="dmRespColsWrapper" id="1433144661"> <div class="u_1372488964 dmRespCol large-5 medium-5 small-6" id="1372488964"> <div class="u_1025560764 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1025560764"> <h2 style="line-height: 1;"><span style="display: initial;">The Directors</span></h2> 
+</div> 
+</div> 
+ <div class="u_1295106339 dmRespCol large-7 medium-7 small-6" id="1295106339"> <div class="u_1281311936 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1281311936"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1611867779"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1903460098 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1903460098"> <h3 style="line-height: 24px;"><span style="display: initial;">Scott Davies:</span></h3> 
+</div> 
+ <div class="u_1856777772 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1856777772"><p><span style="display: initial;">Scott Davies has received multiple-awards throughout his 2 decades in the smash repair industry, including as a 3-time winner of the SE Queensland Small Business of the Year Award. Scott has undertaken various roles throughout his time in the industry, including Severe Accident Repairer, Contractor, Workshop Foreman, Estimator and Workshop Manager - an invaluable member of our team.</span></p></div> 
+ <div class="u_1289771510 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1289771510" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h3 style="line-height: 24px;"><span style="display: initial;">Phillip Hunt:</span></h3> 
+</div> 
+ <div class="u_1095216974 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1095216974"><p><span style="display: initial;">&quot;I haven't painted a train yet, but don't rule it out!&quot; - meet Phillip Hunt, our Head Painter, Estimator, Workshop Flow Controller and HR guru. After more than 2 decades in the industry, Phillip has become the 'go to guy' in Darwin for his expertise in refinishing. With Phillip on our team, your vehicle, household goods, aircraft or boat will look like its come straight from the factory.</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1679767189 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1679767189" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h3 style="line-height: 24px;"><span style="display: initial;">The Key Staff:</span></h3> 
+</div> 
+ <div class="u_1446646961 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1446646961"> <ul class="defaultList"><li><span style="display: initial;">Detailer/Trade Assistant</span></li><li><span style="display: initial;">Senior Panel Beater</span></li><li><span style="display: initial;">Spray Painter</span></li><li><span style="display: initial;">Office Administrator</span></li><li><span class="" style="display: initial;"><span style="display: initial;">Spray Painting Apprentice</span> 
+</span></li></ul> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1477471990"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="f_hcontainer dmFooter p_hfcontainer"> <div class="dmFooterResp generalFooter " id="1081904139"> <div class="dmRespRow u_1505260993" id="1505260993"> <div class="dmRespColsWrapper" id="1395764971"> <div class="dmRespCol large-12 medium-12 small-12" id="1038878074"> <div class="dmRespRow u_1137216871" id="1137216871"> <div class="dmRespColsWrapper" id="1655428055"> <div class="u_1046529002 dmRespCol small-12 large-4 medium-4 hide-for-small" id="1046529002"> <div class="u_1514739677 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1514739677"><p class="m-size-18 size-26" style="line-height: 1;"><span class="m-font-size-18 font-size-26" style="text-transform:capitalize;color:rgb(255, 255, 255);display:initial;font-family:Teko, 'Teko Fallback';">Site Links</span></p></div> 
+ <nav class="u_1570377651 unifiednav_vertical effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_4" layout-sub="" data-show-vertical-sub-items="HOVER" id="1570377651" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="https://lirp-cdn.multiscreensite.com/20bbae45/dms3rep/multi/opt/580-1920w.png" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about-us" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         About Us
+        " data-auto="page-text-style">About Us<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/services" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Services
+        " data-auto="page-text-style">Services<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/insurance-work" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Insurance Work
+        " data-auto="page-text-style">Insurance Work<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/spare-parts" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Spare Parts
+        " data-auto="page-text-style">Spare Parts<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Gallery
+        " data-auto="page-text-style">Gallery<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item    " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Contact
+        " data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="dmRespCol small-12 large-4 medium-4" id="1782054590"> <div class="u_1734535679 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1734535679" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-26 size-26" style="line-height: 1;"><span class="m-font-size-26 font-size-26" m-font-size-set="true" style="text-transform:capitalize;color:rgb(255, 255, 255);display:initial;font-family:Teko, 'Teko Fallback';">Company Information</span></p></div> 
+ <div class="u_1778194735 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1778194735" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-16 m-size-16" style="line-height: 1;"><span class="m-font-size-16 font-size-16" m-font-size-set="true" style="color:rgb(255, 255, 255);display:initial;font-family:Poppins, 'Poppins Fallback';">&nbsp;</span><a href="http://maps.google.com/maps?q=Po+Box+1223+Palmerston+NT+0831" target="_blank" runtime_url="http://maps.google.com/maps?q=Po+Box+1223+Palmerston+NT+0831" m-font-size-set="true" class="m-font-size-16 font-size-16" style="color:rgb(255, 255, 255);display:initial;font-family:Poppins, 'Poppins Fallback';">Po Box 1223 Palmerston NT 0831</a></p></div> 
+ <div class="u_1215700362 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1215700362" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-16 m-size-16" style="line-height: 1;"><a href="tel:0889329420" type="call" class="font-size-16 m-font-size-16" style="color:rgb(255, 255, 255);display:initial;font-family:Poppins, 'Poppins Fallback';" m-font-size-set="true">08 8932 9420</a></p></div> 
+ <div class="u_1628516196 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1628516196" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-16 m-size-16" style="line-height: 1;"><a href="mailto:n.p.w@bigpond.com" type="email" class="font-size-16 m-font-size-16" style="color:rgb(255, 255, 255);display:initial;font-family:Poppins, 'Poppins Fallback';" m-font-size-set="true">n.p.w@bigpond.com</a></p></div> 
+ <div class="u_1559125102 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1559125102" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-26 m-size-26" style="line-height: 1;"><span class="font-size-26 m-font-size-26" style="text-transform:capitalize;color:rgb(255, 255, 255);display:initial;font-family:Teko, 'Teko Fallback';" m-font-size-set="true">SOCIAL MEDIA</span></p></div> 
+ <div data-element-type="html" class="u_1062921722 dmCustomHtml" id="1062921722"> <a href="https://www.localsearch.com.au/profile/northern-panel-works/pinelands-nt/ZIQ6" target="_blank"><img src="https://www.localsearch.com.au/resources/sites/images/social-media/colour-sq-localsearch.svg" style="float: left; width: 32px; height: 32px; margin: 0px 12px 0px 0px;" title="www.localsearch.com.au" alt="www.localsearch.com.au" name="" onerror="handleImageLoadError(this)"/></a> 
+ <a href="https://www.facebook.com/Northern-Panel-Works-107722541465828" target="_blank"><img src="https://www.localsearch.com.au/resources/sites/images/social-media/colour-sq-facebook.svg" style="float: left; width: 32px; height: 32px; margin: 0px 0px 0px 0px;" title="Find us on Facebook" alt="Find us on Facebook" name="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol large-4 medium-4 small-12" id="1137361761"> <div class="u_1470760644 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1470760644" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="size-26 m-size-26" style="line-height: 1;"><span class="font-size-26 m-font-size-26" style="text-transform:capitalize;color:rgb(255, 255, 255);display:initial;font-family:Teko, 'Teko Fallback';" m-font-size-set="true">About Us</span></p></div> 
+ <div class="u_1803016143 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1803016143"><p><span style="color:rgb(255, 255, 255);display:initial;font-family:Poppins, 'Poppins Fallback';">Located in Pinelands, Northern Panel Works (NPW) offers smash repairs and panel beating for private, insurance and fleet vehicles throughout the NT, including Palmerston and Darwin. Our well-equipped workshop allows us to provide spray painting, heavy and light accident repairs, plastic welding, body kits, resprays and more for all makes and models of vehicles.</span></p><p><span style="display: initial;"><br/></span></p><p><a href="/contact" runtime_url="/contact" style="color:rgb(210, 165, 141);display:initial;font-family:Poppins, 'Poppins Fallback';" type="page">Call today for a free quote.</a></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1689056753" id="1689056753"> <div class="dmRespColsWrapper" id="1863009548"> <div class="dmRespCol small-12 u_1594574797 large-6 medium-6" id="1594574797"> <div class="u_1374458949 widget-1f5975 dmCustomWidget" data-lazy-load="" data-title="" id="1374458949" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="22" data-widget-config="eyJjb3B5cmlnaHRUZXh0IjoiPHAgY2xhc3M9XCJydGVCbG9ja1wiPk5vcnRoZXJuIFBhbmVsIFdvcmtzIFB0eSBMdGQ8L3A+In0="> <div class="copyright"> <div>&copy; 2023&nbsp;</div> 
+ <div><p class="rteBlock">Northern Panel Works Pty Ltd</p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1060991631" id="1060991631"> <div data-element-type="html" class="u_1031676980 dmCustomHtml" id="1031676980"> <a href="https://business.localsearch.com.au/seo-services/" target="_blank"><img alt="SEO Services Australia" title="SEO Services Australia" onerror="handleImageLoadError(this)" src="https://www.localsearch.com.au/resources/sites/images/branding/powered-by-localsearch-white.svg" name="https://www.localsearch.com.au/resources/sites/images/branding/powered-by-localsearch-white.svg" style="float: none; width: 124px; height: 50px; margin: 0px 5px 0px 0px;"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1837272898" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_3913";
+    var build = "2023-11-09T11_49_20";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2023-11-09T11_49_20";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+    <script type="text/javascript" id='d-js-jquery'
+            src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+    <!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.opencage.token"] = '319e14f32bcce967ba55cd263478796d';
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/3913';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/3913';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.photoswipe.fix"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.respectCssAnimationProps.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["feature.flag.addTargetBlankToExternalLinks"] =true;
+    rtCommonProps["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtCommonProps["keyboard.navigation.enabled"] =true;
+    rtCommonProps["scripts.widgetCount.enabled"] =true;
+    rtCommonProps["run.imageCount.script.enabled"] =false;
+    rtCommonProps["maps.cookiebot.enabled"] =true;
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'here';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["ecom.ecwid.categoryPage.modifyLinks"] = true;
+    rtCommonProps["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtCommonProps["ecom.ecwid.fallBackInCaseLinksNotFound.enabled"] = true;
+    rtCommonProps["facebook.api.version"] = '7.0';
+    rtCommonProps["feature.flag.photo.gallery.exact.size"] =false;
+    rtCommonProps["new.store.fix.ecwid.back.bug"] =true;
+    rtCommonProps["new.store.accountPage.ecwid.resetPassword.fix"] =true;
+    rtCommonProps["site.runtime.video.background.ssr"] =true;
+    rtCommonProps["geocode.search.localize"] =false;
+    rtCommonProps["facebook.runtime.widgets.upgrade"] =true;
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.contact.form.fix.for.attribute"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["contact.form.date.format.enabled"] = true;
+    rtCommonProps["filestack.uploadToTempBucket.enabled"] = true;
+    rtCommonProps["platform.monolith.loginBar.getUserLoggedIn.enabled"] = true;
+    rtCommonProps["platform.monolith.loginBar.layout.enabled"] = true;
+	rtCommonProps["ecom.ecwid.solve.url.modifications"] = false;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/3913/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/3913/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>jQuery.DM.updateWidthAndHeight();
+$(window).resize(function () {
+    
+});
+$(window).bind("orientationchange", function (e) {
+    $.layoutManager.initLayout();
+    
+});
+$(document).resize(function () {
+    
+});
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+ 	var campaign = (/utm_campaign=([^&]*)/).exec(window.location.search);
+
+ 	if (campaign && campaign != null && campaign.length > 1) {
+ 		campaign = campaign[1];
+ 		document.cookie = "_dm_rt_campaign=" + campaign + ";expires=" + new Date().getTime() + 24*60*60*1000 + ";domain=" + window.location.hostname + ";path=/";
+ 	}
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+  </script>
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '20bbae45'
+});
+
+dmsnowplow('trackPageView')
+$.each(_dm_insite, function(idx, rule) {
+	//('trackStructEvent', 'category','action','label','property','value');
+			// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+	        // the tracking is in popup.js
+			if (rule.actionName !== "popup") {
+                dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+            }
+ 			$(document).ready(function(){
+ 				$.DM.events.trigger('event-ruleTriggered', {value: rule})}
+ 			);
+ 		});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 20bbae45 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+// Collects client data and updates cookies used by smart sites
+var expireDays = 365,visitLength = 30 * 60000;
+$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), expireDays);
+function setSmartSiteCookies() {
+	setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+}
+$.DM.events.on("afterAjax", setSmartSiteCookies);
+setSmartSiteCookies();
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'More Options';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'Less Options';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<script>
+    jQuery(window).on('load', function () {
+        try {
+            jQuery.DM.updateIOSHeight();
+        } catch (e) {
+        }
+    });
+</script>
+<script>
+    dmAPI.loadScript(
+        window.rtCommonProps['common.resources.cdn.host'] + '/libs/lozad/1.15.0/lozad.min.js',
+        function () {
+            dmAPI.runOnReady('lozadInit', function () {
+                window.document.querySelectorAll('img.lazy').forEach(function (img) {
+                    img.addEventListener('load', function (event) {
+                        var img = event.target;
+                        img.style.filter = 'blur(0)';
+                        setTimeout(function () {
+                            $(img).closest('.imageWidget').addClass('lazyLoaded');
+                        }, 250)
+                    });
+                });
+                lozad('.lazy', {
+                    threshold: 0.1,
+                    loaded: function (element) {
+                        if (element.getAttribute('data-background-image')) {
+                            element.style.setProperty(
+                                'background-image',
+                                "url('" + element.getAttribute('data-background-image') + "')",
+                                "important"
+                            );
+                        }
+                    }
+                }).observe();
+            });
+        }
+    );
+</script>
+<!--  End Script tags -->
+
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>
